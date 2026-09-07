@@ -1,0 +1,28 @@
+@ApiGateway_HostAddress = http://localhost:5001
+
+GET {{ApiGateway_HostAddress}}/
+Accept: application/json
+
+###
+
+GET {{ApiGateway_HostAddress}}/health
+
+###
+
+GET {{ApiGateway_HostAddress}}/api/gateway/info
+Accept: application/json
+
+###
+
+GET {{ApiGateway_HostAddress}}/api/users
+Accept: application/json
+
+###
+
+GET {{ApiGateway_HostAddress}}/api/auth
+Accept: application/json
+
+###
+
+GET {{ApiGateway_HostAddress}}/api/production
+Accept: application/json
