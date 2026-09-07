@@ -15,9 +15,17 @@ public class BBKPHService : IBBKPHService
     }
 
     public async Task<List<BienBanKPHDto>> GetAllAsync(
-        CancellationToken cancellationToken = default)
+      DateTime? tuNgay = null,
+      DateTime? denNgay = null,
+      string? maNT = null,
+      int? pageSize = null,
+      CancellationToken cancellationToken = default)
     {
-        return await _bienBanKPHRepository
-            .GetAllAsync(cancellationToken);
+        return await _bienBanKPHRepository.GetAllAsync(
+            tuNgay,
+            denNgay,
+            maNT,
+            pageSize,
+            cancellationToken);
     }
 }
