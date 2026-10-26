@@ -58,6 +58,10 @@ GET http://localhost:5001/health
 GET http://localhost:5001/api/gateway/info
 ```
 
+Tài liệu API lấy dữ liệu sản xuất NMLG2:
+
+[docs/API-NMLG2-DU-LIEU-SAN-XUAT.md](docs/API-NMLG2-DU-LIEU-SAN-XUAT.md)
+
 Swagger:
 
 ```text

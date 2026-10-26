@@ -10,6 +10,7 @@ public static class DependencyInjection
     {
         services.AddScoped<IGatewayService, GatewayService>();
         services.AddScoped<IBBKPHService, BBKPHService>();
+        services.AddScoped<IDuLieuNapLieuLoCaoService, DuLieuNapLieuLoCaoService>();
         return services;
     }
 }

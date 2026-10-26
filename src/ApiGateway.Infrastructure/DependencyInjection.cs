@@ -19,7 +19,13 @@ public static class DependencyInjection
                 configuration.GetConnectionString("QLBienBan2023"),
                 sqlOptions => sqlOptions.EnableRetryOnFailure()));
 
+        services.AddDbContext<ProductFormDbContext>(options =>
+            options.UseSqlServer(
+                configuration.GetConnectionString("PRODUCT_FORM"),
+                sqlOptions => sqlOptions.EnableRetryOnFailure()));
+
         services.AddScoped<IBienBanKPHRepository, BienBanKPHRepository>();
+        services.AddScoped<IDuLieuNapLieuLoCaoRepository, DuLieuNapLieuLoCaoRepository>();
 
         services.AddGatewayReverseProxy(configuration);
         return services;
