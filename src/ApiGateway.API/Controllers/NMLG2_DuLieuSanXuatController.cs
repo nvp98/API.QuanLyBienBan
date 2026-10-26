@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApiGateway.API.Controllers;
 
 [ApiController]
-[Route("api/lg2/nl")]
+[Route("lg2/nl")]
 [Authorize(AuthenticationSchemes = BasicAuthenticationOptions.DefaultScheme)]
 public class NMLG2_DuLieuSanXuatController : ControllerBase
 {
