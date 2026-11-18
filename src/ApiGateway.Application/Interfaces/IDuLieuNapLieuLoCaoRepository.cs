@@ -8,5 +8,6 @@ public interface IDuLieuNapLieuLoCaoRepository
         DateTime? denNgay = null,
         int? idCa = null,
         int? idLoCao = null,
+        string nhomLoCao = null,
         CancellationToken cancellationToken = default);
 }

@@ -21,17 +21,19 @@ public class DuLieuNapLieuLoCaoRepository : IDuLieuNapLieuLoCaoRepository
         DateTime? denNgay = null,
         int? idCa = null,
         int? idLoCao = null,
+         string nhomLoCao = null,
         CancellationToken cancellationToken = default)
     {
         var pTuNgay = new SqlParameter("@TuNgay", System.Data.SqlDbType.Date) { Value = (object?)tuNgay?.Date ?? DBNull.Value };
         var pDenNgay = new SqlParameter("@DenNgay", System.Data.SqlDbType.Date) { Value = (object?)denNgay?.Date ?? DBNull.Value };
         var pIdCa = new SqlParameter("@IDCa", System.Data.SqlDbType.Int) { Value = (object?)idCa ?? DBNull.Value };
         var pIdLoCao = new SqlParameter("@IDLoCao", System.Data.SqlDbType.Int) { Value = (object?)idLoCao ?? DBNull.Value };
+        var pNhomLoCao = new SqlParameter("@NhomLoCao",System.Data.SqlDbType.NVarChar,10) { Value = (object?)nhomLoCao ?? DBNull.Value };
 
         return await _context.Database
             .SqlQueryRaw<DuLieuNapLieuLoCaoDto>(
-                "EXEC dbo.SP_API_LG2_NL_TongHopQuyKhoTheoNVL @TuNgay, @DenNgay, @IDCa, @IDLoCao",
-                pTuNgay, pDenNgay, pIdCa, pIdLoCao)
+                "EXEC dbo.SP_API_LG2_NL_TongHopQuyKhoTheoNVL @TuNgay, @DenNgay, @IDCa, @IDLoCao, @NhomLoCao",
+                pTuNgay, pDenNgay, pIdCa, pIdLoCao, pNhomLoCao)
             .ToListAsync(cancellationToken);
     }
 }

@@ -17,6 +17,7 @@ public class DuLieuNapLieuLoCaoService : IDuLieuNapLieuLoCaoService
         DateTime? denNgay = null,
         int? idCa = null,
         int? idLoCao = null,
+        string nhomLoCao = null,
         CancellationToken cancellationToken = default)
     {
         return await _repository.TongHopDuLieuNapLieuLoCaoTheoNVLAsync(
@@ -24,6 +25,7 @@ public class DuLieuNapLieuLoCaoService : IDuLieuNapLieuLoCaoService
             denNgay,
             idCa,
             idLoCao,
+            nhomLoCao,
             cancellationToken);
     }
 }
