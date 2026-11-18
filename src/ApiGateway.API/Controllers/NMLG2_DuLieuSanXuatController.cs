@@ -31,6 +31,26 @@ public class NMLG2_DuLieuSanXuatController : ControllerBase
             denNgay,
             idCa,
             idLoCao,
+            "LG2",
+            cancellationToken);
+
+        return Ok(data);
+    }
+    [HttpGet("du-lieu-nap-lieu-lo-cao-theo-nvl-lg1")]
+    public async Task<ActionResult<List<DuLieuNapLieuLoCaoDto>>> TongHopDuLieuNapLieuLoCaoTheoNVL_LG1(
+    [FromQuery] DateTime? tuNgay,
+    [FromQuery] DateTime? denNgay,
+    [FromQuery] int? idCa,
+    [FromQuery] int? idLoCao,
+    CancellationToken cancellationToken)
+    {
+        // LG1: Lò cao 1, 2, 3, 4
+        var data = await _service.TongHopDuLieuNapLieuLoCaoTheoNVLAsync(
+            tuNgay,
+            denNgay,
+            idCa,
+            idLoCao,
+            "LG1",
             cancellationToken);
 
         return Ok(data);
